@@ -7,7 +7,11 @@
 			for(var i in data.about_info){
 				$("#about_info").append("<p>"+data.about_info[i]+"</p>");
 			}
-			$("#skill_info").append("<p>"+data.skill_info+"</p>");
+			//设置打字效果
+			var skill_info = data.skill_info;
+			var skill_info_hash = location.hash;
+			console.log(skill_info_hash);
+			$("#skill_info").append("<p>"+skill_info+"</p>");
 			$(".skill_int").append("<ul></ul>");
 			for(var i in data.seo){
 				$("#skill_int1 ul").append("<li>"+data.seo[i]+"</li>");
