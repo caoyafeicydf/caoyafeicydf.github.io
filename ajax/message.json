@@ -13,28 +13,28 @@
 		"熟练的指令编写"
 	],
 	"html":[
-		"深刻理解Web标准",
+		"熟练运用html精准还原设计稿并保持良好结构",
 		"熟练运用html标签",
 		"熟悉xml及xhtml标记语言",
-		"掌握html5如SVG，localstorage新特性"
+		"掌握html5如canvas、localstorage的使用方法"
 	],
 	"css":[
 		"熟练运用css及css3新属性",
 		"注重浏览器兼容性，熟悉常见的css hack（兼容至IE8）",
-		"掌握bootstrap框架及源码的实现",
+		"掌握bootstrap框架",
 		"掌握css预编译器Less及Sass"
 	],
 	"javaScript":[
-		"掌握jQuery",
-		"掌握原生JS的编程",
+		"深入理解jQuery",
+		"深入理解原生JS高级特性",
 		"注重JavaScript性能优化",
-		"正在学习ES6"
+		"了解ES6基本语法"
 	],
 	"exp_info":"2014年实习期间，开始了web前端自学生涯。",
 	"contact_info":[
 		"学习是一个充实愉悦的过程",
 		"前端更贴近用户，这种体验非常美妙",
-		"热爱FE.D，也热爱一切美好的事物",
+		"热爱前端，也热爱一切美好的事物",
 		"行路有良友，便是捷径",
 		"带上我吧，一起看到更大的世界"
 	]
