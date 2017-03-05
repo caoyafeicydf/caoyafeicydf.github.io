@@ -159,10 +159,10 @@
 });
 //顶部标题文字切换
 	$("#header_p").mouseover(function(){
-		$("#header_p1").html("Resume");
+		$("#header_p1").html("cyf0611");
 		$("#header_p2").html("前端工程师");
 	}).mouseout(function(){
-		$("#header_p1").html("F2E");
+		$("#header_p1").html("曹亚飞");
 		$("#header_p2").html("个人简历");	
 	})
 //顶部导航取消
