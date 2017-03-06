@@ -19,10 +19,11 @@
 					if (skill_info_i>=skill_info_str.length) {
 						clearInterval(skill_info_timeId);
 					}
+					i++;
 				},200);
 				//$("#skill_info").append("<p>"+skill_info+"</p>");
 			}
-			
+
 			$(".skill_int").append("<ul></ul>");
 			for(var i in data.seo){
 				$("#skill_int1 ul").append("<li>"+data.seo[i]+"</li>");
