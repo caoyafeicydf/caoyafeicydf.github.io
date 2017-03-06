@@ -16,11 +16,14 @@
 				var skill_info_timeId = setInterval(function () {
 					skill_info_str += skill_info[i];
 					$("#skill_info").append(skill_info_str);
-					if (skill_info_i>=skill_info_str.length) {
+					if (skill_info_i>=skill_info.length) {
 						clearInterval(skill_info_timeId);
 					}
 					i++;
-				},200);
+					console.log('字符串:'+skill_info);
+					console.log('字符串长度:'+skill_info.length);
+					console.log('已有字符串:'+skill_info_str);
+				},400);
 				//$("#skill_info").append("<p>"+skill_info+"</p>");
 			}
 
