@@ -10,8 +10,19 @@
 			//设置打字效果
 			var skill_info = data.skill_info;
 			var skill_info_hash = location.hash;
-			console.log(skill_info_hash);
-			$("#skill_info").append("<p>"+skill_info+"</p>");
+			if (skill_info_hash==='#page3') {
+				var skill_info_str = '';
+				var skill_info_i = 0;
+				var skill_info_timeId = setInterval(function () {
+					skill_info_str += skill_info[i];
+					$("#skill_info").append(skill_info_str);
+					if (skill_info_i>=skill_info_str.length) {
+						clearInterval(skill_info_timeId);
+					}
+				},200);
+				//$("#skill_info").append("<p>"+skill_info+"</p>");
+			}
+			
 			$(".skill_int").append("<ul></ul>");
 			for(var i in data.seo){
 				$("#skill_int1 ul").append("<li>"+data.seo[i]+"</li>");
