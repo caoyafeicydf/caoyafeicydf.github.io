@@ -22,7 +22,7 @@
 					console.log('字符串:'+skill_info);
 					console.log('字符串长度:'+skill_info.length);
 					console.log('已有字符串:'+skill_info_str);
-				},400);
+				},200);
 				//$("#skill_info").append("<p>"+skill_info+"</p>");
 			}
 
