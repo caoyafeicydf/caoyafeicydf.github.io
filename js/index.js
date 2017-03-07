@@ -9,8 +9,7 @@
 			}
 			//设置打字效果
 			var skill_info = data.skill_info;
-			var skill_info_hash = location.hash;
-			if (skill_info_hash==='#page3') {
+			if (location.hash==='#page3') {
 				var skill_info_str = '';
 				var skill_info_i = 0;
 				var skill_info_timeId = setInterval(function () {
@@ -19,9 +18,6 @@
 						clearInterval(skill_info_timeId);
 					}
 					skill_info_i++;
-					console.log('字符串:'+skill_info);
-					console.log('字符串长度:'+skill_info.length);
-					console.log('已有字符串:'+skill_info_str);
 				},200);
 				//$("#skill_info").append("<p>"+skill_info+"</p>");
 			}
