@@ -8,19 +8,21 @@
 				$("#about_info").append("<p>"+data.about_info[i]+"</p>");
 			}
 			//设置打字效果
-			var skill_info = data.skill_info;
-			if (location.hash==='#page3') {
-				var skill_info_str = '';
-				var skill_info_i = 0;
-				var skill_info_timeId = setInterval(function () {
-					$("#skill_info").append(skill_info[skill_info_i]);
-					if (skill_info_i>=skill_info.length) {
-						clearInterval(skill_info_timeId);
-					}
-					skill_info_i++;
-				},200);
-				//$("#skill_info").append("<p>"+skill_info+"</p>");
-			}
+			skill_info = data.skill_info;
+			flag = true;
+			// console.log(location.hash);
+			// if (location.hash==='#page3') {
+			// 	var skill_info_str = '';
+			// 	var skill_info_i = 0;
+			// 	var skill_info_timeId = setInterval(function () {
+			// 		$("#skill_info").append(skill_info[skill_info_i]);
+			// 		if (skill_info_i>=skill_info.length) {
+			// 			clearInterval(skill_info_timeId);
+			// 		}
+			// 		skill_info_i++;
+			// 	},200);
+			// 	//$("#skill_info").append("<p>"+skill_info+"</p>");
+			// }
 
 			$(".skill_int").append("<ul></ul>");
 			for(var i in data.seo){
@@ -97,6 +99,20 @@
 					$(".title_en h2").slideDown(400);
 				});	
 				$(".skill_list_content").addClass("skill_scale");
+				
+				if (flag) {
+					var skill_info_str = '';
+					var skill_info_i = 0;
+					var skill_info_timeId = setInterval(function () {
+						$("#skill_info").append(skill_info[skill_info_i]);
+						if (skill_info_i>=skill_info.length) {
+							clearInterval(skill_info_timeId);
+						}
+						skill_info_i++;
+					},100);
+					flag = false;
+				}
+
 			}
 			if(index==4){
 				$("aside a").eq(3).addClass("selected").siblings().removeClass("selected");
