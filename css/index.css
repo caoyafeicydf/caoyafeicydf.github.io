@@ -120,30 +120,37 @@ nav {
 nav li {
 	float: left;
 	margin: 0 20px;
+
 }
 nav li a {
 	padding: 25px 0;
 	position: relative;	
 	color: #666;
+
+
 }
 nav li a:after {
 	content: "";
 	position: absolute;
 	left: 50%;
 	right: 50%;
+	width: 0;
 	bottom: 0;
 	height: 2px;
 	background: #1FAEFF;
 	opacity: 0;
 	-webkit-transition: .2s ease-in;
 	transition: .2s ease-in;
+
 }
 nav li a:hover {
-	color: #000;
+	color: black;
+
 }
 nav li a:hover:after {
 	left: 0;
 	right: 0;
+	width: 100%;
 	opacity: 1;
 }
 @media screen and (max-width:1366px){
@@ -258,10 +265,12 @@ aside b {
 	border-radius: 75px;
 	position: absolute;
 	-webkit-transition: box-shadow 2s;
-	transition: box-shadow 2s;
+	transition: all 2s;
 }
 #home_head img:hover {
 	box-shadow: 0px 0px 10px #FF0000;
+	transform: rotateY(180deg);
+	transform-origin: center center;
 }
 img#home_photo2 {
 	opacity: 0;
