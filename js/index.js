@@ -99,7 +99,7 @@
 					$(".title_en h2").slideDown(400);
 				});	
 				$(".skill_list_content").addClass("skill_scale");
-				
+
 				if (flag) {
 					var skill_info_str = '';
 					var skill_info_i = 0;
