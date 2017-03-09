@@ -9,7 +9,7 @@
 			}
 			//设置打字效果
 			skill_info = data.skill_info;
-			flag = true;
+
 			// console.log(location.hash);
 			// if (location.hash==='#page3') {
 			// 	var skill_info_str = '';
@@ -99,7 +99,7 @@
 					$(".title_en h2").slideDown(400);
 				});	
 				$(".skill_list_content").addClass("skill_scale");
-
+				flag = true;
 				if (flag) {
 					var skill_info_str = '';
 					var skill_info_i = 0;
@@ -112,6 +112,8 @@
 					},100);
 					flag = false;
 				}
+
+
 
 			}
 			if(index==4){
@@ -148,6 +150,9 @@
 					   },200*i);
 					}
 				})
+
+
+
 			}
 			if(index==6){
 				$("aside a").eq(5).addClass("selected").siblings().removeClass("selected");

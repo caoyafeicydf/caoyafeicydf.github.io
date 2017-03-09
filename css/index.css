@@ -814,7 +814,7 @@ img#home_photo2 {
 }
 /* demo */
 #demo_content_list {
-	margin: 50px auto 20px;
+	margin: 0px auto 20px;
 	width: 1000px;
 	height: 200px;
 }
@@ -863,6 +863,11 @@ img#home_photo2 {
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
+	transform: scale(1,1);
+	transition: all 1s;
+}
+.demo_box_content:hover {
+	transform: scale(1.1,1.1);
 }
 .demo_box_hover {
 	position: absolute;
@@ -901,6 +906,7 @@ img#home_photo2 {
 .demo_box_hover_icon img {
 	width: 56px;
 	height: 56px;
+	margin-top: 5px;
 }
 .demo_box_link {
 	border-radius: 50%;
@@ -915,7 +921,7 @@ img#home_photo2 {
 }
 #demo_info {
 	clear: both;
-	padding-top: 50px;
+	padding-top: 30px;
 	border-top: 1px solid #f00;
 	width: 950px;
   	margin: 0 auto;
@@ -1177,3 +1183,7 @@ footer div a:hover {
 	display: none;
 }
 }
+
+
+/*作品页新增动画*/
+
