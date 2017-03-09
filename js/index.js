@@ -7,6 +7,7 @@
 			for(var i in data.about_info){
 				$("#about_info").append("<p>"+data.about_info[i]+"</p>");
 			}
+
 			//设置打字效果
 			skill_info = data.skill_info;
 
@@ -41,6 +42,8 @@
 			for(var i in data.contact_info){
 				$("#contact_info").append("<p>"+data.contact_info[i]+"</p>");	
 			}
+			$('#contact_info>p:odd').css({'transform':'translateX(400px)','transition':'all 2s'})
+			$('#contact_info>p:even').css({'transform':'translateX(-400px)','transition':'all 2s'})
 		}
 	});
     $('#dowebok').fullpage({
@@ -184,6 +187,10 @@
 						});
 				},70);
 			}
+
+
+			$('#contact_info>p').css({'transform':'translateX(0)'})
+
 		},
 		onLeave:function(index , nextIndex, direction){
 			if(index==2||index==3||index==4||index==5||index==6){
