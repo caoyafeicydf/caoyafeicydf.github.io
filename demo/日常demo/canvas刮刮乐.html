@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+    </style>
+
+</head>
+<script src="../SeaJS/jquery.js"></script>
+<body>
+</body>
+<script>
+    var canvas = document.createElement("canvas");
+    var cas = canvas.getContext("2d");
+    canvas.width=360;
+    canvas.height=360;
+    document.body.appendChild(canvas);
+    canvas.style.backgroundImage = 'url(01big.jpg)';
+    cas.fillStyle = 'rgb(211,211,211)';
+    cas.fillRect(0, 0, 360, 360);
+    cas.globalCompositeOperation = 'destination-out';
+    console.log(cas.getImageData(0,0,100,100).data);
+    var arrX = [], arrY = [];
+
+
+    $('canvas').on('mousedown', function () {
+        $(this).on('mousemove', function (e) {
+            var x = e.clientX,
+                y=e.clientY;
+            arrX.push(x);
+            arrY.push(y);
+            cas.beginPath();
+            cas.arc(x, y, 20, 0, 2 * Math.PI);
+            cas.fill();
+
+
+
+
+//            if (Math.max.apply(null,arrX)-Math.min.apply(null,arrX)>canvas.width/4*3 && Math.max.apply(null,arrY)-Math.min.apply(null,arrY)>canvas.height/4*3) {
+//                console.log(222222222);
+//
+//            }
+        });
+        var j = 0;
+        var arr=cas.getImageData(0,0,canvas.width, canvas.height).data
+        for(var i=0;i<arr.length;i+=4){
+            if (arr[i]!=211) {
+                j++;
+            }
+        }
+        console.log(j);
+        if (j>arr.length/4*0.5) {
+            cas.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+    });
+    $('canvas').on('mouseup mouseout', function () {
+        $('canvas').off('mousemove');
+    });
+
+
+    
+
+</script>
+</html>

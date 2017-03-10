@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas {
+            box-shadow:10px 10px 5px;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+    var canvas = document.createElement("canvas");
+    var cas = canvas.getContext("2d");
+    canvas.width=800;
+    canvas.height=600;
+    document.body.appendChild(canvas);
+
+    function Time(data) {
+        for (var k in data) {
+            this[k] = data[k];
+        }
+        this.init();
+    }
+    Time.prototype={
+        constructor:Time,
+        init: function () {
+            this.drawHMS();
+
+        },
+        drawBig: function () {
+            cas.beginPath();
+            cas.lineWidth = this.bigWidth;
+            cas.arc(this.bigRadiusX, this.bigRadiusY, this.bigRadius, 0, 2 * Math.PI);
+            cas.strokeStyle = 'red';
+            cas.stroke();
+        },
+        drawMark: function () {
+            var space = 2 * Math.PI / 60,
+                start=0;
+
+            for (var i=0;i<60;i++) {
+                var delay1 = 15;
+                var delay2 = 5;
+                var temp = i % 5 == 0 ? delay1 : delay2;
+                var outX=this.bigRadiusX+Math.cos(start+space*i)*(this.bigRadius-this.bigWidth/2);
+                var outY=this.bigRadiusX+Math.sin(start+space*i)*(this.bigRadius-this.bigWidth/2);
+                var insideX = this.bigRadiusX + Math.cos(start+space*i) * (this.bigRadius-this.bigWidth/2 - temp);
+                var insideY = this.bigRadiusX + Math.sin(start+space*i) * (this.bigRadius-this.bigWidth/2 - temp);
+                cas.beginPath();
+                cas.moveTo(insideX, insideY);
+                cas.lineTo(outX, outY);
+                cas.stroke();
+            }
+        },
+        drawPoint: function (length,width,color,num,now) {
+
+            var space = 2*Math.PI / num ;
+            var x = this.bigRadiusX + Math.cos(space * now-Math.PI/2) * length;
+            var y = this.bigRadiusY + Math.sin(space * now-Math.PI/2) * length;
+            cas.save();
+            cas.beginPath();
+            cas.lineWidth = width;
+            cas.lineCap = 'round';
+            cas.strokeStyle = color;
+            cas.moveTo(this.bigRadiusX, this.bigRadiusY);
+            cas.lineTo(x, y);
+            cas.stroke();
+            cas.restore();
+
+        },
+        drawHMS: function () {
+
+            var self = this;
+            var timeId=setInterval(function () {
+                var date = new Date();
+                var hour = date.getHours()%12;
+                var minutes = date.getMinutes();
+                var second = date.getSeconds();
+                cas.clearRect(0, 0, canvas.width, canvas.height);
+
+                self.drawPoint(60, 10, 'pink', 12, hour);
+                self.drawPoint(90, 8, 'blue', 60, minutes);
+                self.drawPoint(120, 4, 'black', 60, second);
+                self.drawBig();
+                self.drawMark();
+                self.drawText();
+                cas.arc(self.bigRadiusX, self.bigRadiusY, 10,0,2*Math.PI);
+                cas.fill();
+            },100)
+
+        },
+        drawText: function () {
+            var space = 2 * Math.PI / 12;
+            for (var i=0;i<12;i++) {
+                var x = this.bigRadiusX + Math.cos(space * i - Math.PI / 2) * (this.bigRadius - 33);
+                var y = this.bigRadiusY + Math.sin(space * i - Math.PI / 2) * (this.bigRadius - 33);
+                cas.font = '20px 微软雅黑';
+                cas.textAlign = 'center';
+                cas.textBaseline = 'middle';
+                cas.fillText(i ==0?12:i, x, y);
+            }
+
+        }
+    }
+
+
+    var data={
+        bigRadius:150,
+        bigRadiusX:200,
+        bigRadiusY:200,
+        bigWidth:10
+    }
+
+    var time=new Time(data)
+</script>
+</html>

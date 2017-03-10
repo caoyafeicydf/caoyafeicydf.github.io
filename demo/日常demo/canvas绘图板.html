@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input:first-of-type {
+            background-color: red;
+        }
+        input:nth-of-type(2) {
+            background-color: blue;
+        }
+        input:nth-of-type(3) {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="cas" width="500" height="300"></canvas>
+<br>
+<input type="button" value="红色"  onclick="red()">
+<input type="button" value="蓝色" onclick="blue()">
+<input type="button" value="黄色" onclick="yellow()">
+<br>
+<select name="" id="" onchange="select(this)">
+    <option value="1">1px</option>
+    <option value="5">5px</option>
+    <option value="10">10px</option>
+</select>
+<script>
+    var cas = document.getElementById("cas");
+    cas.style.border="2px solid red"
+    var context = cas.getContext("2d");
+    var arr = [];
+    var mouseDown = false;
+
+    //封装颜色函数
+    function red(dom) {
+        context.strokeStyle = "red";
+    }
+    function blue() {
+        context.strokeStyle = "blue";
+    }
+    function yellow() {
+        context.strokeStyle = "yellow";
+    }
+
+    //封装线宽函数
+    function select(dom) {
+        context.lineWidth = dom.value;
+    }
+
+    cas.addEventListener("mousedown", function (e) {
+        mouseDown = true;
+    });
+    cas.addEventListener("mouseup", function () {
+        mouseDown = false;
+    });
+
+    cas.addEventListener("mousemove", function (e) {
+        document.title = e.offsetX + "," + e.offsetY;
+        if (mouseDown) {
+            //context.clearRect(0, 0, cas.width, cas.height);
+
+            arr.push({x: e.offsetX, y: e.offsetY});
+            //context.clearRect(0, 0, cas.width, cas.height);
+            context.beginPath();
+            context.moveTo(arr[0].x, arr[0].y);
+            for (var i=1;i<arr.length;i++) {
+                context.lineTo(arr[i].x, arr[i].y);
+            }
+            context.stroke();
+            //console.log(arr[0].x);
+
+        }else {
+            arr = [];
+
+        }
+    })
+
+
+
+</script>
+</body>
+</html>
