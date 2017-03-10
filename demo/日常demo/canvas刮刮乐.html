@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
-
+        img {
+            background-size: cover;
+        }
     </style>
 
 </head>
-<script src="../SeaJS/jquery.js"></script>
+<script src="jquery-1.12.2.js"></script>
 <body>
 </body>
 <script>
+    var imgArr=['cangjingkong.jpg','boduo.jpg','libai.jpg']
     var canvas = document.createElement("canvas");
     var cas = canvas.getContext("2d");
     canvas.width=360;
     canvas.height=360;
+    canvas.style.backgroundSize = 'cover';
     document.body.appendChild(canvas);
-    canvas.style.backgroundImage = 'url(01big.jpg)';
+    canvas.style.backgroundImage = 'url(images/'+imgArr[parseInt(Math.random()*3)]+')';
+    console.log(canvas);
     cas.fillStyle = 'rgb(211,211,211)';
     cas.fillRect(0, 0, 360, 360);
     cas.globalCompositeOperation = 'destination-out';
