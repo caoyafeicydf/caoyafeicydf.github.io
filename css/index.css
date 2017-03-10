@@ -795,6 +795,7 @@ img#home_photo2 {
     text-align: center;
 }
 .modal-example a {
+	display: block;
     text-decoration: none;
     color: #000;
 }

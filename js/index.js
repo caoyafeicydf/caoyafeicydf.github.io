@@ -25,6 +25,12 @@
 			// 	//$("#skill_info").append("<p>"+skill_info+"</p>");
 			// }
 
+			//注册demo的src
+			$('#modal-3 li a').each(function () {
+
+				this.href = './demo/日常demo/' + this.innerHTML + '.html';
+			});
+
 			$(".skill_int").append("<ul></ul>");
 			for(var i in data.seo){
 				$("#skill_int1 ul").append("<li>"+data.seo[i]+"</li>");
