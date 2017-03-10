@@ -27,8 +27,8 @@ perspective effects (not including the modals and the overlay).
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	width: 50%;
-	max-width: 630px;
+	width: 150%;
+	max-width: 800px;
 	min-width: 320px;
 	height: auto;
 	z-index: 2000;
@@ -68,8 +68,8 @@ perspective effects (not including the modals and the overlay).
 
 /* Content styles */
 .md-content {
-	color: #fff;
-	background: #d6ecf0;
+	color: #000;
+	background: #fff;
 	position: relative;
 	border-radius: 3px;
 	margin: 0 auto;

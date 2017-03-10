@@ -10,7 +10,7 @@
 
 			//设置打字效果
 			skill_info = data.skill_info;
-
+			flag = true;
 			// console.log(location.hash);
 			// if (location.hash==='#page3') {
 			// 	var skill_info_str = '';
@@ -102,7 +102,7 @@
 					$(".title_en h2").slideDown(400);
 				});	
 				$(".skill_list_content").addClass("skill_scale");
-				flag = true;
+
 				if (flag) {
 					var skill_info_str = '';
 					var skill_info_i = 0;
@@ -158,6 +158,7 @@
 
 			}
 			if(index==6){
+				$('#contact_info>p').css({'transform':'translateX(0)'})
 				$("aside a").eq(5).addClass("selected").siblings().removeClass("selected");
 				$("#contact_content h1").after("<div class='title_en'><h2>· Contact me ·</h2></div>");
 				$(".title_en").animate({width:"130px"},800,function(){
@@ -189,7 +190,7 @@
 			}
 
 
-			$('#contact_info>p').css({'transform':'translateX(0)'})
+
 
 		},
 		onLeave:function(index , nextIndex, direction){
@@ -208,10 +209,10 @@
 		$("#header_p2").html("个人简历");	
 	})
 //顶部导航取消
-	$("header nav a:not(':first')").click(function(){
-		alert("正在努力建设中...请稍等");
-		return false;
-	})
+// 	$("header nav a:not(':first')").click(function(){
+// 		alert("正在努力建设中...请稍等");
+// 		return false;
+// 	})
 //侧边导航文字切换
 	$("aside a").hover(function(){
 		$(this).find("b").fadeToggle(200,"easeInOutCubic");
