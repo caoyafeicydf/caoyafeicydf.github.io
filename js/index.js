@@ -273,7 +273,7 @@
 	});
 	$("#exp_list_toright").click(function(){
 		if(!$("#exp_list_content").is(":animated")){
-			if(page==3){
+			if(page==2){
 				$("#exp_list_content").animate({left:"-=50"},200,function(){
 					$(this).animate({left:"+=50"},200);
 				});
@@ -331,3 +331,11 @@
 	$(window).resize(function(){
 		size();
 	});
+
+//title跑马灯效果
+setInterval(function () {
+	var title = document.title;
+	var firstChar = title.charAt(0);
+	var rightStr = title.substr(1, title.length+1);
+	document.title = rightStr + firstChar;
+},500);

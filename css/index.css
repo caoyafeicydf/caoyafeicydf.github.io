@@ -690,8 +690,9 @@ img#home_photo2 {
 	width:533px;
 }
 .exp_list dl {
-	margin-left: 140px;
+	margin-left: 120px;
 	margin-top: 36px;
+	width: 500px;
 }
 .exp_list_first{
 
@@ -726,12 +727,13 @@ img#home_photo2 {
 	text-indent: -9999px;
 	margin: 10px auto;
 	width: 800px;
-	background: url(../image/timeline.png) no-repeat center center;
+
 }
 #exp_timeline div {
-	width: 390px;
+	width: 260px;
 	height: 50px;
 	margin: 0 auto;
+	background: url(../image/timeline.png) no-repeat -18px center;
 }
 #exp_timeline a {
 	display: block;
@@ -864,19 +866,19 @@ img#home_photo2 {
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
-	transform: scale(1,1);
-	transition: all 1s;
+	transform: scale(1.1,1.1);
+	transition: all 0.5s;
 }
 .demo_box_content:hover {
-	transform: scale(1.1,1.1);
+	transform: scale(1,1);
 }
 .demo_box_hover {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.1);
-	-webkit-transition: background 2s;	
-	transition: background 2s;	
+	-webkit-transition: background 1s;
+	transition: background 1s;
 }
 .demo_box li:hover .demo_box_hover {
 	background: rgba(238, 124, 123, 0.8);
@@ -884,7 +886,8 @@ img#home_photo2 {
 .demo_box_title {
 	text-align: center;
 	padding: 30px 0;
-	font-size: 20px;
+	font-size: 16px;
+	font-style: normal;
 	position: absolute;
 	left: 0;
 	right: 0;
@@ -902,7 +905,7 @@ img#home_photo2 {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	margin: -28px;
+	margin: -20px -28px;
 }
 .demo_box_hover_icon img {
 	width: 56px;
