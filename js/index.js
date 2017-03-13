@@ -7,6 +7,41 @@
 			for(var i in data.about_info){
 				$("#about_info").append("<p>"+data.about_info[i]+"</p>");
 			}
+			//Demo 分页效果实现
+			paging(data.pagingData)
+			function paging(data) {
+				if (data.length<=20) {
+					for(var i=0;i<data.length;i++){
+						$('<li class="demo"><a target="_blank" href="' + data[i].src + '">'+data[i].name+'</a></li>').appendTo($('.pageUl'));
+					}
+				}else {
+					for(var i=0;i<20;i++){
+						$('<li class="demo"><a target="_blank" href="' + data[i].src + '">'+data[i].name+'</a></li>').appendTo($('.pageUl'));
+					}
+				}
+
+				var index = Math.ceil(data.length / 20);
+				for(var i=0;i<index;i++){
+					$('<a href="#">' + (i+1) + '</a>').appendTo($('.down'))
+				}
+
+				$('.down a').each(function () {
+					$(this).on('click', function () {
+						$('.pageUl li').remove();
+						var result=this.innerText<index?20:(data.length-index*20+20)
+						for(var j=0;j<result;j++){
+							$('<li class="demo"><a target="_blank" href="' + data[j+(this.innerText<index?(this.innerText-1):(index-1))*20].src + '">'+data[j+(this.innerText<index?(this.innerText-1):(index-1))*20].name+'</a></li>').appendTo($('.pageUl'));
+
+						}
+
+
+					});
+				})
+				$('.down').css({width:52*index})
+			}
+
+
+
 
 			//设置打字效果
 			skill_info = data.skill_info;
@@ -26,14 +61,16 @@
 			// }
 
 			//注册demo的src
-			$('#modal-3 li a').each(function () {
+			/*$('#modal-3 li a').each(function () {
 
 				this.href = './demo/日常demo/' + this.innerHTML + '.html';
-			});
+			});*/
 
 			$(".skill_int").append("<ul></ul>");
-			for(var i in data.seo){
-				$("#skill_int1 ul").append("<li>"+data.seo[i]+"</li>");
+
+			for(var i in data.angularJs){
+				;
+				$("#skill_int1 ul").append("<li>"+data.angularJs[i]+"</li>");
 			}
 			for(var i in data.html){
 				$("#skill_int2 ul").append("<li>"+data.html[i]+"</li>");

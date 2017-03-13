@@ -763,17 +763,21 @@ img#home_photo2 {
 	max-width:550px;
 }
 .md-close {
+	position: absolute;
+	top: 23px;
+	right:33px;
 	border: none;
 	padding: 0.6em 1.2em;
 	background: #a4e2c6;
 	color: #fff;
 	font-family: 'Lato', Calibri, Arial, sans-serif;
 	font-size: 1em;
-	letter-spacing: 1px;
+	/*letter-spacing: 1px;*/
 	text-transform: uppercase;
 	cursor: pointer;
-	display: inline-block;
-	margin: 3px 2px;
+	/*display: inline-block;*/
+	/*margin:0 auto;*/
+
 	border-radius: 2px;
 }
 .md-close:hover {
@@ -797,6 +801,7 @@ img#home_photo2 {
     text-align: center;
 }
 .modal-example a {
+	line-height:32px;
 	display: block;
     text-decoration: none;
     color: #000;
@@ -1191,22 +1196,59 @@ footer div a:hover {
 
 
 /*Demo*/
-#modal-3 ul{
-	display: flex;
 
-}
-#modal-3 li {
-	display: inline-block;
-	background-color: #e1e1e1;
-	margin: 0 15px;
-	border-radius: 20px;
-	flex:1;
-
-}
 
 #modal-3 li:hover {
 	background-color: #ff4444;
 }
 #modal-3 li:hover a {
 	color: white;
+}
+
+.pageUl {
+	width: 720px;
+	height: 400px;
+	padding: 15px 40px 30px;
+	margin: 50px auto;
+
+}
+.pageUl li {
+	margin: 0 0 30px 20px;
+	float: left;
+	list-style: none;
+	text-align: center;
+	display: block;
+
+}
+.pageUl a {
+	display: block;
+	text-decoration: none;
+	height: 100%;
+	line-height: 32px;
+	clear: both;
+}
+.demo {
+	width: 145px;
+	height: 32px;
+
+	border-radius: 20px;
+	background-color: #e1e1e1;
+
+}
+.down {
+
+	margin: 0 auto;
+	margin-top: -80px;
+	height: 30px;
+	text-align: center;
+}
+.down a {
+	display: block;
+	height: 32px;
+	width: 32px;
+	background-color: yellow;
+	margin: 10px;
+	float: left;
+	text-align: center;
+	border-radius: 50%;
 }
