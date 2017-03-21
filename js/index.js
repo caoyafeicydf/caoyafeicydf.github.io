@@ -4,6 +4,7 @@
 		url: "ajax/message.json",
 		dataType: "json",
 		success: function(data){
+			console.log(data);
 			for(var i in data.about_info){
 				$("#about_info").append("<p>"+data.about_info[i]+"</p>");
 			}
@@ -68,9 +69,9 @@
 
 			$(".skill_int").append("<ul></ul>");
 
-			for(var i in data.angularJs){
-				;
-				$("#skill_int1 ul").append("<li>"+data.angularJs[i]+"</li>");
+			for(var i in data.MVVM){
+
+				$("#skill_int1 ul").append("<li>"+data.MVVM[i]+"</li>");
 			}
 			for(var i in data.html){
 				$("#skill_int2 ul").append("<li>"+data.html[i]+"</li>");

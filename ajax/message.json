@@ -6,25 +6,23 @@
 		"对前端框架、开发模式有丰富的经验和独特见解。拥有较强的学习能力和团队合作能力。"
 	],
 	"skill_info":"前端的学习需要持之以恒，知识深度与广度都很重要。而前端开发的重中之重就是原生javascript的理解，而如今的思路必需有模块化，组件化，工程化",
-	"angularJs":[
-                
-"熟悉模块化、组件化开发，熟悉AMD、CMD、CommonJS模块化规范",
-		"有angular项目开发经验",
-		"熟悉基础框架的中间件，如：express、",
-		
-		"了解Node、Vue"
+	"MVVM":[
+        "熟悉AMD、CMD、CommonJS模块化规范",
+        "深入了解模块化、组件化开发、前后端分离思想",
+		"有angular、vue项目开发经验",
+		"熟悉Node开发及操作MongoDB数据库"
 	],
 	"html":[
 		"熟练运用html精准还原设计稿并保持良好结构",
 		"熟练运用html标签",
-		"熟悉xml及xhtml标记语言",
+		"了解SEO优化",
 		"掌握html5如canvas、localstorage的使用方法"
 	],
 	"css":[
 		"熟练运用css及css3新属性",
-		"注重浏览器兼容性，熟悉常见的css hack（兼容至IE8）",
-		"掌握bootstrap框架",
-		"掌握css预编译器Less及Sass"
+		"注重浏览器兼容性，熟悉常见的css hack",
+		"掌握bootstrap等框架",
+		"掌握css预编译器Less"
 	],
 	"javaScript":[
 		"深入理解jQuery",
@@ -100,6 +98,9 @@
       },
       {"name":"love",
         "src":"demo/日常demo/love/index.html"
+      },
+      {"name":"封装的分页组件",
+        "src":"demo/日常demo/封装的分页组件.html"
       }
       
     ]
