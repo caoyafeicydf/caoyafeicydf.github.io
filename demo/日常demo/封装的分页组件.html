@@ -1,0 +1,580 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .pageUl {
+            width: 720px;
+            height: 400px;
+            padding: 15px 40px 30px;
+            margin: 50px auto;
+            background-color: pink;
+        }
+        .pageUl li {
+            margin: 0 0 30px 20px;
+            float: left;
+            list-style: none;
+            text-align: center;
+            display: block;
+
+        }
+        .pageUl a,.down a {
+            display: block;
+            text-decoration: none;
+            height: 100%;
+            line-height: 32px;
+        }
+        .demo {
+            width: 145px;
+            height: 32px;
+            
+            border-radius: 20px;
+            background-color: red;
+
+        }
+        .down {
+            margin: 0 auto;
+            height: 30px;
+            text-align: center;
+        }
+        .down span {
+            display: block;
+            height: 32px;
+            width: 32px;
+            background-color: yellow;
+            margin: 10px;
+            float: left;
+            text-align: center;
+            border-radius: 50%;
+        }
+    </style>
+    <script src="jquery-1.12.2.js"></script>
+</head>
+
+<body>
+<ul class='pageUl'>
+
+</ul>
+<div class='down'></div>
+</body>
+<script>
+    var data = [
+        {
+            "name": "拖1拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖2拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖5拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖6拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖2拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖2拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖2拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖3拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        }, {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖4拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖8拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖3拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖5拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖1拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        }
+    ];
+    var data2 = [
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖5拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖5拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖4拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖2拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖2拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖8拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        }, {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖5拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖2拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖35拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖12拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖21拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖21拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖拽",
+            "src": "拖拽.html"
+        },
+        {
+            "name": "拖21拽",
+            "src": "拖拽.html"
+        }
+    ];
+    data.push(...data2);
+
+    data[1].name = 'hagdfdha';
+    data[21].name = 'haha';
+    data[41].name = '6654';
+    data[61].name = '66vsad54';
+    data[81].name = 'vdsva';
+    data[1].src = 'sfwedf';
+    data[21].src = 'sdf';
+    data[41].src = '555';
+    data[61].src = 'd55fds5';
+    data[61].src = 'vbsefd';
+    data[81].src = 'dfs';
+
+    data[117].name='fds'
+    if (data.length<=20) {
+        for(var i=0;i<data.length;i++){
+            $('<li class="demo"><a href="' + data[i].src + '">'+data[i].name+'</a></li>').appendTo($('ul'));
+        }
+    }else {
+        for(var i=0;i<20;i++){
+            $('<li class="demo"><a href="' + data[i].src + '">'+data[i].name+'</a></li>').appendTo($('ul'));
+        }
+    }
+
+    var index = Math.ceil(data.length / 20);
+    for(var i=0;i<index;i++){
+        $('<span><a href="#">' + (i+1) + '</a></span>').appendTo($('.down'))
+    }
+
+    $('.down span a').each(function () {
+        $(this).on('click', function () {
+                $('li').remove();
+                var result=this.innerText<index?20:(data.length-index*20+20)
+                for(var j=0;j<result;j++){
+                    $('<li class="demo"><a href="' + data[j+(this.innerText<index?(this.innerText-1):(index-1))*20].src + '">'+data[j+(this.innerText<index?(this.innerText-1):(index-1))*20].name+'</a></li>').appendTo($('ul'));
+
+                }
+
+
+        });
+    })
+    $('.down').css({width:52*index})
+</script>
+</html>
