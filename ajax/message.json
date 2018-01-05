@@ -101,6 +101,9 @@
       },
       {"name":"封装的分页组件",
         "src":"demo/日常demo/封装的分页组件.html"
+      },
+      {"name":"跳转",
+        "src":"demo/日常demo/index.html"
       }
       
     ]
